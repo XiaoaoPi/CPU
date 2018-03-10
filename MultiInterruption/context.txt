@@ -1,0 +1,37 @@
+sw $s1, 0($sp)
+addi $sp, $sp, -4
+sw $a0, 0($sp)
+addi $sp, $sp, -4
+sw $v0, 0($sp)
+addi $sp, $sp, -4
+nop
+nop
+nop
+mfc0 $v0, $0
+sw $v0, 0($sp)#数据冲突
+addi $sp, $sp, -4
+#开中断
+mtc0 $zero, $00001
+
+
+
+
+#关中断
+addi $v0, $zero, 1
+nop
+nop
+nop
+mtc0 $v0, $00001 #数据冲突
+addi $sp, $sp, 4
+lw $v0, 0($sp)
+nop
+nop
+nop
+mtc0 $v0, $0
+addi $sp, $sp, 4
+lw $v0, 0($sp)
+addi $sp, $sp, 4
+lw $a0, 0($sp)
+addi $sp, $sp, 4
+lw $s1, 0($sp)
+eret

@@ -1,0 +1,1 @@
+iverilog -o i7test .\i7_test.v .\i7_6700k.v .\ALU.v .\change_type.v .\controller.v .\display.v .\divider.v .\ds_2ways.v .\extender.v .\is.v .\led.v .\operating_parameter.v .\pc.v .\regfile.v .\IF_ID.v .\ID_EX.v .\EX_Mem.v .\Mem_WB.v .\IF.v .\ID.v .\EX.v .\ME.v .\NPC.v
